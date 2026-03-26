@@ -99,6 +99,16 @@ export const menuData: MenuCategory[] = [
     ],
   },
   {
+    title: "Hand Crafted Chocolates",
+    items: [
+      { no: 1, name: "Roasted Nuts", priceKg: "2,500" },
+      { no: 2, name: "Rum n Raisin", priceKg: "2,500" },
+      { no: 3, name: "Orange Rind", priceKg: "2,500" },
+      { no: 4, name: "Irish Coffee", priceKg: "2,500" },
+      { no: 5, name: "Premium Nuts", priceKg: "3,000" },
+    ],
+  },
+  {
     title: "Tea Time Companions",
     items: [
       { no: 1, name: "Nuts n Caramel", priceHalfKg: "800", priceKg: "1,600" },
@@ -122,16 +132,6 @@ export const menuData: MenuCategory[] = [
       { no: 19, name: "Fig Honey n Walnut", recommended: true, priceHalfKg: "920", priceKg: "1,840" },
       { no: 20, name: "Humming Bird Cake", priceHalfKg: "920", priceKg: "1,840" },
       { no: 21, name: "Fig Date Walnut (Sugar Free / Gluten Free / Dairy Free)", priceHalfKg: "900", priceKg: "1,800" },
-    ],
-  },
-  {
-    title: "Hand Crafted Chocolates",
-    items: [
-      { no: 1, name: "Roasted Nuts", priceKg: "2,500" },
-      { no: 2, name: "Rum n Raisin", priceKg: "2,500" },
-      { no: 3, name: "Orange Rind", priceKg: "2,500" },
-      { no: 4, name: "Irish Coffee", priceKg: "2,500" },
-      { no: 5, name: "Premium Nuts", priceKg: "3,000" },
     ],
   },
   {

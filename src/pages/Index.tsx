@@ -61,6 +61,33 @@ const Index = () => {
             No items found for "{search}"
           </p>
         )}
+
+        {/* Notes */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 rounded-xl border border-border bg-card p-8 shadow-sm"
+        >
+          <p className="mb-3 font-display text-lg font-semibold text-foreground">
+            Kindly specify if you need the order to be eggless.
+          </p>
+          <p className="mb-2 font-body text-base text-foreground">
+            Eggless cakes (Rs 100/Kg extra charge)
+          </p>
+          <p className="mb-2 font-body text-base text-foreground">
+            Fancy Cakes &amp; Wedding Cakes (25-40% Extra Charge)
+          </p>
+          <p className="mb-2 font-body text-base text-foreground">
+            ☺ Chef Recommends.
+          </p>
+          <p className="mb-6 font-body text-base text-foreground">
+            * Indicates seasonal availability of Products.
+          </p>
+          <p className="text-center font-display text-3xl font-bold text-foreground md:text-4xl">
+            Mo. 9227104646, 9724870015
+          </p>
+        </motion.div>
       </main>
 
       {/* Footer */}
@@ -69,7 +96,7 @@ const Index = () => {
           Juvenas Bakery
         </p>
         <p className="mt-1 font-body text-sm text-muted-foreground">
-          Quality & Hygiene - we never compromise
+          Quality &amp; Hygiene - we never compromise
         </p>
       </footer>
     </div>
