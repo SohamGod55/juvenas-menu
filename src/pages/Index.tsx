@@ -69,7 +69,7 @@ const Index = () => {
           Juvenas Bakery
         </p>
         <p className="mt-1 font-body text-sm text-muted-foreground">
-          Handcrafted with love, one slice at a time.
+          Quality & Hygiene - we never compromise
         </p>
       </footer>
     </div>

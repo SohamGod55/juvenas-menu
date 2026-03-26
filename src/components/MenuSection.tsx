@@ -44,12 +44,12 @@ const MenuSection = ({ category, index }: MenuSectionProps) => {
               )}
               {hasKg && (
                 <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  1 kg
+                  750GM
                 </th>
               )}
               {hasPc && (
                 <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  Per Pc / 750g
+                  PER PC / 1KG
                 </th>
               )}
             </tr>
