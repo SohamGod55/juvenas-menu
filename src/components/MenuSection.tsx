@@ -19,7 +19,7 @@ const colorMap: Record<CategoryColor, string> = {
   muffins: "var(--cat-muffins)",
   chocolates: "var(--cat-chocolates)",
   teatime: "var(--cat-teatime)",
-  addons: "var(--cat-addons)",
+  
 };
 
 const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps) => {
