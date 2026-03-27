@@ -83,9 +83,6 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                     <span className="font-body text-sm font-medium text-foreground flex items-center gap-1.5 flex-1 min-w-0">
                       <span className="text-muted-foreground text-xs">{item.no}.</span>
                       <span className="truncate">{item.name}</span>
-                      {item.recommended && (
-                        <Star className="h-3 w-3 flex-shrink-0 fill-accent text-accent" />
-                      )}
                     </span>
                     <span className="flex flex-col items-end gap-0.5 text-xs font-body whitespace-nowrap">
                       {hasHalfKg && item.priceHalfKg && (
@@ -148,18 +145,7 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                           {item.no}
                         </td>
                         <td className="px-4 py-3 font-body text-sm font-medium text-foreground">
-                          <span className="flex items-center gap-2">
-                            {item.name}
-                            {item.recommended && (
-                              <span
-                                className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white"
-                                style={{ background: `hsl(${catColor})` }}
-                              >
-                                <Star className="h-3 w-3 fill-white" />
-                                Chef's Pick
-                              </span>
-                            )}
-                          </span>
+                          {item.name}
                         </td>
                         {hasHalfKg && (
                           <td className="px-4 py-3 text-right font-body text-sm text-foreground">
