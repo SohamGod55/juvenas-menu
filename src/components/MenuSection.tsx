@@ -19,7 +19,6 @@ const colorMap: Record<CategoryColor, string> = {
   muffins: "var(--cat-muffins)",
   chocolates: "var(--cat-chocolates)",
   teatime: "var(--cat-teatime)",
-  
 };
 
 const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps) => {
@@ -30,6 +29,11 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
 
   const catInfo = categoryIcons[category.title] || { emoji: "🍴", color: "cakes" as CategoryColor };
   const catColor = colorMap[catInfo.color];
+
+  // Determine column labels based on category
+  const isDesserts = category.title === "Desserts";
+  const halfKgLabel = isDesserts ? "½KG / 750GM" : "½ KG";
+  const kgLabel = isDesserts ? "Rs/KG" : "1 KG";
 
   return (
     <motion.section
@@ -47,7 +51,6 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
           background: `linear-gradient(135deg, hsl(${catColor}) , hsl(${catColor} / 0.85))`,
         }}
       >
-        {catInfo.emoji && <span className="text-2xl">{catInfo.emoji}</span>}
         <h2 className="flex-1 font-display text-lg font-semibold text-white md:text-xl">
           {category.title}
         </h2>
@@ -82,17 +85,20 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                   >
                     <span className="font-body text-sm font-medium text-foreground flex items-center gap-1.5 flex-1 min-w-0">
                       <span className="text-muted-foreground text-xs">{item.no}.</span>
-                      <span className="truncate">{item.name}</span>
+                      <span className="truncate">
+                        {item.name}
+                        {item.recommended && <span className="ml-1" title="Chef Recommends">😊</span>}
+                      </span>
                     </span>
                     <span className="flex flex-col items-end gap-0.5 text-xs font-body whitespace-nowrap">
                       {hasHalfKg && item.priceHalfKg && (
                         <span className="text-muted-foreground">½kg: <strong className="text-foreground">₹{item.priceHalfKg}</strong></span>
                       )}
                       {hasKg && item.priceKg && (
-                        <span className="text-muted-foreground">750g: <strong className="text-foreground">₹{item.priceKg}</strong></span>
+                        <span className="text-muted-foreground">{isDesserts ? "750g" : "1kg"}: <strong className="text-foreground">₹{item.priceKg}</strong></span>
                       )}
                       {hasPc && item.pricePc && (
-                        <span className="text-muted-foreground">Pc/1kg: <strong className="text-foreground">₹{item.pricePc}</strong></span>
+                        <span className="text-muted-foreground">1kg: <strong className="text-foreground">₹{item.pricePc}</strong></span>
                       )}
                     </span>
                   </div>
@@ -118,17 +124,17 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                       </th>
                       {hasHalfKg && (
                         <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                          ½ kg
+                          {halfKgLabel}
                         </th>
                       )}
                       {hasKg && (
                         <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                          750GM
+                          {kgLabel}
                         </th>
                       )}
                       {hasPc && (
                         <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                          PER PC / 1KG
+                          {isDesserts ? "Rs/KG" : "PER PC"}
                         </th>
                       )}
                     </tr>
@@ -146,6 +152,7 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                         </td>
                         <td className="px-4 py-3 font-body text-sm font-medium text-foreground">
                           {item.name}
+                          {item.recommended && <span className="ml-1.5" title="Chef Recommends">😊</span>}
                         </td>
                         {hasHalfKg && (
                           <td className="px-4 py-3 text-right font-body text-sm text-foreground">

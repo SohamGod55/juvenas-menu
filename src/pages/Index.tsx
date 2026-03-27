@@ -78,6 +78,9 @@ const Index = () => {
           <p className="mb-2 font-body text-base text-foreground">
             Fancy Cakes &amp; Wedding Cakes (25-40% Extra Charge)
           </p>
+          <p className="mb-2 font-body text-base text-foreground">
+            😊 Chef Recommends.
+          </p>
           <p className="mb-6 font-body text-base text-foreground">
             * Indicates seasonal availability of Products.
           </p>
