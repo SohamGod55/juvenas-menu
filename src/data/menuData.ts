@@ -7,6 +7,21 @@ export interface MenuItem {
   pricePc?: string;
 }
 
+export type CategoryColor =
+  | "cakes" | "fruit" | "coffee" | "desserts"
+  | "pies" | "muffins" | "chocolates" | "teatime";
+
+export const categoryIcons: Record<string, { emoji: string; color: CategoryColor }> = {
+  "Cakes / Gateaux – Chocolate Delicacies": { emoji: "🎂", color: "cakes" },
+  "Fresh Fruit Gateaux": { emoji: "🍓", color: "fruit" },
+  "Coffee Options": { emoji: "☕", color: "coffee" },
+  "Desserts": { emoji: "🍰", color: "desserts" },
+  "Pies & Tarts": { emoji: "🥧", color: "pies" },
+  "Cupcakes / Muffins": { emoji: "🧁", color: "muffins" },
+  "Hand Crafted Chocolates": { emoji: "🍫", color: "chocolates" },
+  "Tea Time & Add-ons": { emoji: "🫖", color: "teatime" },
+};
+
 export interface MenuCategory {
   title: string;
   items: MenuItem[];
@@ -109,7 +124,7 @@ export const menuData: MenuCategory[] = [
     ],
   },
   {
-    title: "Tea Time Companions",
+    title: "Tea Time & Add-ons",
     items: [
       { no: 1, name: "Nuts n Caramel", priceHalfKg: "800", priceKg: "1,600" },
       { no: 2, name: "Marble Cake", priceHalfKg: "800", priceKg: "1,600" },
@@ -132,13 +147,8 @@ export const menuData: MenuCategory[] = [
       { no: 19, name: "Fig Honey n Walnut", recommended: true, priceHalfKg: "920", priceKg: "1,840" },
       { no: 20, name: "Humming Bird Cake", priceHalfKg: "920", priceKg: "1,840" },
       { no: 21, name: "Fig Date Walnut (Sugar Free / Gluten Free / Dairy Free)", priceHalfKg: "900", priceKg: "1,800" },
-    ],
-  },
-  {
-    title: "Add-ons",
-    items: [
-      { no: 1, name: "Cream Cheese Frosting", priceHalfKg: "250", priceKg: "500" },
-      { no: 2, name: "Extra Nuts", priceHalfKg: "60", priceKg: "120" },
+      { no: 22, name: "Cream Cheese Frosting (Add-on)", priceHalfKg: "250", priceKg: "500" },
+      { no: 23, name: "Extra Nuts (Add-on)", priceHalfKg: "60", priceKg: "120" },
     ],
   },
 ];

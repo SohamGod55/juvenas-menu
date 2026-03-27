@@ -40,6 +40,16 @@
     --gold-shimmer: linear-gradient(90deg, hsl(38 70% 50%), hsl(42 80% 60%), hsl(38 70% 50%));
     --warm-overlay: linear-gradient(180deg, hsl(30 25% 96% / 0), hsl(30 25% 96%));
 
+    --cat-cakes: 15 65% 48%;
+    --cat-fruit: 145 55% 42%;
+    --cat-coffee: 25 70% 38%;
+    --cat-desserts: 330 60% 50%;
+    --cat-pies: 35 80% 50%;
+    --cat-muffins: 280 50% 55%;
+    --cat-chocolates: 10 45% 30%;
+    --cat-teatime: 195 60% 45%;
+    --cat-addons: 195 60% 45%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;

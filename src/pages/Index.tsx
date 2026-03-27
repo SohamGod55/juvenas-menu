@@ -53,7 +53,7 @@ const Index = () => {
 
         {/* Menu sections */}
         {filteredCategories.map((cat, i) => (
-          <MenuSection key={cat.title} category={cat} index={i} />
+          <MenuSection key={cat.title} category={cat} index={i} defaultOpen={i === 0} />
         ))}
 
         {filteredCategories.length === 0 && (
