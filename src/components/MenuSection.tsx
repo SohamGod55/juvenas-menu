@@ -27,8 +27,42 @@ const MenuSection = ({ category, index }: MenuSectionProps) => {
         <div className="h-px flex-1 bg-border" />
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-border bg-card shadow-sm">
-        <table className="w-full min-w-[500px] text-left">
+      {/* Mobile: card layout */}
+      <div className="flex flex-col gap-2 md:hidden">
+        {category.items.map((item) => (
+          <div
+            key={item.no}
+            className="rounded-lg border border-border bg-card p-3 shadow-sm"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-body text-sm font-medium text-foreground flex items-center gap-2">
+                <span className="text-muted-foreground">{item.no}.</span>
+                {item.name}
+                {item.recommended && (
+                  <span className="inline-flex items-center gap-0.5 rounded-full bg-accent/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-accent">
+                    <Star className="h-2.5 w-2.5 fill-accent" />
+                  </span>
+                )}
+              </span>
+            </div>
+            <div className="mt-1.5 flex flex-wrap gap-3 text-xs font-body text-muted-foreground">
+              {hasHalfKg && item.priceHalfKg && (
+                <span>½kg: <strong className="text-foreground">₹{item.priceHalfKg}</strong></span>
+              )}
+              {hasKg && item.priceKg && (
+                <span>750gm: <strong className="text-foreground">₹{item.priceKg}</strong></span>
+              )}
+              {hasPc && item.pricePc && (
+                <span>Pc/1kg: <strong className="text-foreground">₹{item.pricePc}</strong></span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: table layout */}
+      <div className="hidden md:block overflow-x-auto rounded-xl border border-border bg-card shadow-sm">
+        <table className="w-full text-left">
           <thead>
             <tr className="border-b border-border bg-secondary/50">
               <th className="px-4 py-3 font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
