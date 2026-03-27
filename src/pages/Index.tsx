@@ -82,7 +82,7 @@ const Index = () => {
             <Star className="h-4 w-4 fill-accent text-accent" /> <strong>CHEF'S PICK</strong> — Our top recommendations
           </p>
           <p className="mb-6 font-body text-base text-foreground">
-            * Indicates seasonal availability of Products.
+            Indicates seasonal availability of Products.
           </p>
           <p className="text-center font-display text-3xl font-bold text-foreground md:text-4xl">
             Mo. 9227104646, 9724870015
