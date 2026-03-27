@@ -9,18 +9,17 @@ export interface MenuItem {
 
 export type CategoryColor =
   | "cakes" | "fruit" | "coffee" | "desserts"
-  | "pies" | "muffins" | "chocolates" | "teatime" | "addons";
+  | "pies" | "muffins" | "chocolates" | "teatime";
 
 export const categoryIcons: Record<string, { emoji: string; color: CategoryColor }> = {
-  "Chocolate": { emoji: "🎂", color: "cakes" },
-  "Fresh Fruit*": { emoji: "🍓", color: "fruit" },
-  "Coffee": { emoji: "☕", color: "coffee" },
-  "Desserts": { emoji: "🍰", color: "desserts" },
-  "Pies & Tarts": { emoji: "🥧", color: "pies" },
-  "Cupcakes / Muffins": { emoji: "🧁", color: "muffins" },
-  "Hand Crafted Chocolates: Rs 2500/kg": { emoji: "🍫", color: "chocolates" },
-  "Tea Cakes": { emoji: "🫖", color: "teatime" },
-  "Add-ons": { emoji: "➕", color: "addons" },
+  "Chocolate": { emoji: "", color: "cakes" },
+  "Fresh Fruit*": { emoji: "", color: "fruit" },
+  "Coffee": { emoji: "", color: "coffee" },
+  "Desserts": { emoji: "", color: "desserts" },
+  "Pies & Tarts": { emoji: "", color: "pies" },
+  "Cupcakes / Muffins": { emoji: "", color: "muffins" },
+  "Hand Crafted Chocolates: Rs 2500/kg": { emoji: "", color: "chocolates" },
+  "Tea Cakes": { emoji: "", color: "teatime" },
 };
 
 export interface MenuCategory {
@@ -131,7 +130,7 @@ export const menuData: MenuCategory[] = [
       { no: 2, name: "Marble cake", priceHalfKg: "800", priceKg: "1,600" },
       { no: 3, name: "Date n Walnut", priceHalfKg: "820", priceKg: "1,640" },
       { no: 4, name: "Choc Walnut Brownie", priceHalfKg: "850", priceKg: "1,700" },
-      { no: 5, name: "Gooey Brownie", recommended: true, priceHalfKg: "1,020", priceKg: "2,040" },
+      { no: 5, name: "Gooey Brownie", priceHalfKg: "1,020", priceKg: "2,040" },
       { no: 6, name: "Carrot Cake", priceHalfKg: "820", priceKg: "1,640" },
       { no: 7, name: "Banana Walnut", priceHalfKg: "820", priceKg: "1,640" },
       { no: 8, name: "Honey n Raisin", priceHalfKg: "820", priceKg: "1,640" },
@@ -145,16 +144,11 @@ export const menuData: MenuCategory[] = [
       { no: 16, name: "Parsee Mava Cake", priceHalfKg: "900", priceKg: "1,800" },
       { no: 17, name: "Apple Cinnamon", priceHalfKg: "820", priceKg: "1,640" },
       { no: 18, name: "Cookie Dough Brownie", priceHalfKg: "1,050", priceKg: "2,100" },
-      { no: 19, name: "Fig Honey n Walnut", recommended: true, priceHalfKg: "920", priceKg: "1,840" },
+      { no: 19, name: "Fig Honey n Walnut", priceHalfKg: "920", priceKg: "1,840" },
       { no: 20, name: "Humming bird cake", priceHalfKg: "920", priceKg: "1,840" },
       { no: 21, name: "Fig Date Walnut (Sugar free/Gluten Free/Dairy free)", priceHalfKg: "900", priceKg: "1,800" },
-    ],
-  },
-  {
-    title: "Add-ons",
-    items: [
-      { no: 1, name: "Cream Cheese Frosting", priceHalfKg: "250", priceKg: "500" },
-      { no: 2, name: "Extra Nuts", priceHalfKg: "60", priceKg: "120" },
+      { no: 22, name: "Cream Cheese Frosting (Add-on)", priceHalfKg: "250", priceKg: "500" },
+      { no: 23, name: "Extra Nuts (Add-on)", priceHalfKg: "60", priceKg: "120" },
     ],
   },
 ];
