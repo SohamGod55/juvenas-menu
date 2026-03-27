@@ -12,7 +12,7 @@ export type CategoryColor =
   | "pies" | "muffins" | "chocolates" | "teatime" | "addons";
 
 export const categoryIcons: Record<string, { emoji: string; color: CategoryColor }> = {
-  "Cakes / Gateaux": { emoji: "🎂", color: "cakes" },
+  "Chocolate": { emoji: "🎂", color: "cakes" },
   "Fresh Fruit*": { emoji: "🍓", color: "fruit" },
   "Coffee": { emoji: "☕", color: "coffee" },
   "Desserts": { emoji: "🍰", color: "desserts" },
@@ -30,7 +30,7 @@ export interface MenuCategory {
 
 export const menuData: MenuCategory[] = [
   {
-    title: "Cakes / Gateaux",
+    title: "Chocolate",
     items: [
       { no: 1, name: "Chocolate Temptation", priceHalfKg: "1,000", priceKg: "2,000" },
       { no: 2, name: "White Forest", priceHalfKg: "1,010", priceKg: "2,020" },
