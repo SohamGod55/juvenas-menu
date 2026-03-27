@@ -9,18 +9,17 @@ export interface MenuItem {
 
 export type CategoryColor =
   | "cakes" | "fruit" | "coffee" | "desserts"
-  | "pies" | "muffins" | "chocolates" | "teatime" | "addons";
+  | "pies" | "muffins" | "chocolates" | "teatime";
 
 export const categoryIcons: Record<string, { emoji: string; color: CategoryColor }> = {
-  "Chocolate": { emoji: "🎂", color: "cakes" },
-  "Fresh Fruit*": { emoji: "🍓", color: "fruit" },
-  "Coffee": { emoji: "☕", color: "coffee" },
-  "Desserts": { emoji: "🍰", color: "desserts" },
-  "Pies & Tarts": { emoji: "🥧", color: "pies" },
-  "Cupcakes / Muffins": { emoji: "🧁", color: "muffins" },
-  "Hand Crafted Chocolates: Rs 2500/kg": { emoji: "🍫", color: "chocolates" },
-  "Tea Cakes": { emoji: "🫖", color: "teatime" },
-  "Add-ons": { emoji: "➕", color: "addons" },
+  "Chocolate": { emoji: "", color: "cakes" },
+  "Fresh Fruit*": { emoji: "", color: "fruit" },
+  "Coffee": { emoji: "", color: "coffee" },
+  "Desserts": { emoji: "", color: "desserts" },
+  "Pies & Tarts": { emoji: "", color: "pies" },
+  "Cupcakes / Muffins": { emoji: "", color: "muffins" },
+  "Hand Crafted Chocolates: Rs 2500/kg": { emoji: "", color: "chocolates" },
+  "Tea Cakes": { emoji: "", color: "teatime" },
 };
 
 export interface MenuCategory {
