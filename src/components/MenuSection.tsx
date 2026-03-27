@@ -23,17 +23,20 @@ const colorMap: Record<CategoryColor, string> = {
 
 const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-  const hasHalfKg = category.items.some((i) => i.priceHalfKg);
-  const hasKg = category.items.some((i) => i.priceKg);
-  const hasPc = category.items.some((i) => i.pricePc);
 
   const catInfo = categoryIcons[category.title] || { emoji: "🍴", color: "cakes" as CategoryColor };
   const catColor = colorMap[catInfo.color];
 
-  // Determine column labels based on category
   const isDesserts = category.title === "Desserts";
-  const halfKgLabel = isDesserts ? "½KG / 750GM" : "½ KG";
-  const kgLabel = isDesserts ? "Rs/KG" : "1 KG";
+
+  // For Desserts: merge priceHalfKg & priceKg into one column ("½KG / 750GM"), pricePc = "Rs/KG"
+  // For others: priceHalfKg = "½ KG", priceKg = "1 KG", pricePc = "PER PC"
+  const hasHalfKg = category.items.some((i) => i.priceHalfKg);
+  const hasKg = category.items.some((i) => i.priceKg);
+  const hasPc = category.items.some((i) => i.pricePc);
+
+  const getDessertsFirstPrice = (item: { priceHalfKg?: string; priceKg?: string }) =>
+    item.priceHalfKg || item.priceKg || null;
 
   return (
     <motion.section
@@ -91,14 +94,27 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                       </span>
                     </span>
                     <span className="flex flex-col items-end gap-0.5 text-xs font-body whitespace-nowrap">
-                      {hasHalfKg && item.priceHalfKg && (
-                        <span className="text-muted-foreground">½kg: <strong className="text-foreground">₹{item.priceHalfKg}</strong></span>
-                      )}
-                      {hasKg && item.priceKg && (
-                        <span className="text-muted-foreground">{isDesserts ? "750g" : "1kg"}: <strong className="text-foreground">₹{item.priceKg}</strong></span>
-                      )}
-                      {hasPc && item.pricePc && (
-                        <span className="text-muted-foreground">1kg: <strong className="text-foreground">₹{item.pricePc}</strong></span>
+                      {isDesserts ? (
+                        <>
+                          {getDessertsFirstPrice(item) && (
+                            <span className="text-muted-foreground">½kg/750g: <strong className="text-foreground">₹{getDessertsFirstPrice(item)}</strong></span>
+                          )}
+                          {item.pricePc && (
+                            <span className="text-muted-foreground">1kg: <strong className="text-foreground">₹{item.pricePc}</strong></span>
+                          )}
+                        </>
+                      ) : (
+                        <>
+                          {hasHalfKg && item.priceHalfKg && (
+                            <span className="text-muted-foreground">½kg: <strong className="text-foreground">₹{item.priceHalfKg}</strong></span>
+                          )}
+                          {hasKg && item.priceKg && (
+                            <span className="text-muted-foreground">1kg: <strong className="text-foreground">₹{item.priceKg}</strong></span>
+                          )}
+                          {hasPc && item.pricePc && (
+                            <span className="text-muted-foreground">pc: <strong className="text-foreground">₹{item.pricePc}</strong></span>
+                          )}
+                        </>
                       )}
                     </span>
                   </div>
@@ -122,20 +138,33 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                       <th className="px-4 py-3 font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
                         Item
                       </th>
-                      {hasHalfKg && (
-                        <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                          {halfKgLabel}
-                        </th>
-                      )}
-                      {hasKg && (
-                        <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                          {kgLabel}
-                        </th>
-                      )}
-                      {hasPc && (
-                        <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                          {isDesserts ? "Rs/KG" : "PER PC"}
-                        </th>
+                      {isDesserts ? (
+                        <>
+                          <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                            ½KG / 750GM
+                          </th>
+                          <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                            Rs/KG
+                          </th>
+                        </>
+                      ) : (
+                        <>
+                          {hasHalfKg && (
+                            <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                              ½ KG
+                            </th>
+                          )}
+                          {hasKg && (
+                            <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                              1 KG
+                            </th>
+                          )}
+                          {hasPc && (
+                            <th className="px-4 py-3 text-right font-body text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                              PER PC
+                            </th>
+                          )}
+                        </>
                       )}
                     </tr>
                   </thead>
@@ -154,20 +183,33 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                           {item.name}
                           {item.recommended && <span className="ml-1.5" title="Chef Recommends">😊</span>}
                         </td>
-                        {hasHalfKg && (
-                          <td className="px-4 py-3 text-right font-body text-sm text-foreground">
-                            {item.priceHalfKg ? `₹${item.priceHalfKg}` : "—"}
-                          </td>
-                        )}
-                        {hasKg && (
-                          <td className="px-4 py-3 text-right font-body text-sm text-foreground">
-                            {item.priceKg ? `₹${item.priceKg}` : "—"}
-                          </td>
-                        )}
-                        {hasPc && (
-                          <td className="px-4 py-3 text-right font-body text-sm text-foreground">
-                            {item.pricePc ? `₹${item.pricePc}` : "—"}
-                          </td>
+                        {isDesserts ? (
+                          <>
+                            <td className="px-4 py-3 text-right font-body text-sm text-foreground">
+                              {getDessertsFirstPrice(item) ? `₹${getDessertsFirstPrice(item)}` : "—"}
+                            </td>
+                            <td className="px-4 py-3 text-right font-body text-sm text-foreground">
+                              {item.pricePc ? `₹${item.pricePc}` : "—"}
+                            </td>
+                          </>
+                        ) : (
+                          <>
+                            {hasHalfKg && (
+                              <td className="px-4 py-3 text-right font-body text-sm text-foreground">
+                                {item.priceHalfKg ? `₹${item.priceHalfKg}` : "—"}
+                              </td>
+                            )}
+                            {hasKg && (
+                              <td className="px-4 py-3 text-right font-body text-sm text-foreground">
+                                {item.priceKg ? `₹${item.priceKg}` : "—"}
+                              </td>
+                            )}
+                            {hasPc && (
+                              <td className="px-4 py-3 text-right font-body text-sm text-foreground">
+                                {item.pricePc ? `₹${item.pricePc}` : "—"}
+                              </td>
+                            )}
+                          </>
                         )}
                       </tr>
                     ))}
