@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import type { MenuCategory } from "@/data/menuData";
 import { categoryIcons, type CategoryColor } from "@/data/menuData";
 
@@ -47,7 +47,7 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
           background: `linear-gradient(135deg, hsl(${catColor}) , hsl(${catColor} / 0.85))`,
         }}
       >
-        <span className="text-2xl">{catInfo.emoji}</span>
+        {catInfo.emoji && <span className="text-2xl">{catInfo.emoji}</span>}
         <h2 className="flex-1 font-display text-lg font-semibold text-white md:text-xl">
           {category.title}
         </h2>
