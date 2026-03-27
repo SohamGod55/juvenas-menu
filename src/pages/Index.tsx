@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Cake, Search } from "lucide-react";
+import { Cake, Search, Star } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import { menuData } from "@/data/menuData";
@@ -78,8 +78,8 @@ const Index = () => {
           <p className="mb-2 font-body text-base text-foreground">
             Fancy Cakes &amp; Wedding Cakes (25-40% Extra Charge)
           </p>
-          <p className="mb-2 font-body text-base text-foreground">
-            😊 Chef Recommends.
+          <p className="mb-2 font-body text-base text-foreground flex items-center gap-1.5">
+            <Star className="h-4 w-4 fill-accent text-accent" /> <strong>CHEF'S PICK</strong> — Our top recommendations
           </p>
           <p className="mb-6 font-body text-base text-foreground">
             * Indicates seasonal availability of Products.
