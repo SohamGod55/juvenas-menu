@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Cake, Search, Star } from "lucide-react";
+import { Cake, Search } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
+import InfoSections from "@/components/InfoSections";
 import MenuSection from "@/components/MenuSection";
 import { menuData } from "@/data/menuData";
 
@@ -20,14 +21,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <InfoSections />
 
-      <main className="mx-auto max-w-5xl px-4 py-16">
+      <main className="mx-auto max-w-5xl px-4 py-8">
         {/* Search */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 flex flex-col items-center gap-4"
+          className="mb-8 flex flex-col items-center gap-3"
         >
           <div className="flex items-center gap-2 text-muted-foreground">
             <Cake className="h-5 w-5 text-accent" />
@@ -36,9 +38,6 @@ const Index = () => {
             </span>
             <Cake className="h-5 w-5 text-accent" />
           </div>
-          <p className="text-center font-display text-lg italic text-muted-foreground">
-            All prices in Indian Rupees (₹)
-          </p>
           <div className="relative w-full max-w-md">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <input
@@ -67,35 +66,35 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 rounded-xl border border-border bg-card p-8 shadow-sm"
+          className="mt-12 rounded-xl border border-border bg-card p-6 shadow-sm"
         >
-          <p className="mb-3 font-display text-lg font-semibold text-foreground">
+          <p className="mb-2 font-display text-base font-semibold text-foreground">
             Kindly specify if you need the order to be eggless.
           </p>
-          <p className="mb-2 font-body text-base text-foreground">
+          <p className="mb-1.5 font-body text-sm text-foreground">
             Eggless cakes (Rs 100/Kg extra charge)
           </p>
-          <p className="mb-2 font-body text-base text-foreground">
+          <p className="mb-1.5 font-body text-sm text-foreground">
             Fancy Cakes &amp; Wedding Cakes (25-40% Extra Charge)
           </p>
-          <p className="mb-2 font-body text-base text-foreground flex items-center gap-1.5">
-            <Star className="h-4 w-4 fill-accent text-accent" /> <strong>CHEF'S PICK</strong> — Our top recommendations
+          <p className="mb-1.5 font-body text-sm text-foreground flex items-center gap-1.5">
+            ☺ — Our top recommendations
           </p>
-          <p className="mb-6 font-body text-base text-foreground">
+          <p className="mb-4 font-body text-sm text-foreground">
             Indicates seasonal availability of Products.
           </p>
-          <p className="text-center font-display text-3xl font-bold text-foreground md:text-4xl">
+          <p className="text-center font-display text-2xl font-bold text-foreground md:text-3xl">
             Mo. 9227104646, 9724870015
           </p>
         </motion.div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-secondary/30 py-8 text-center">
-        <p className="font-display text-lg font-semibold text-foreground">
+      <footer className="border-t border-border bg-secondary/30 py-6 text-center">
+        <p className="font-display text-base font-semibold text-foreground">
           Juvenas Bakery
         </p>
-        <p className="mt-1 font-body text-sm text-muted-foreground">
+        <p className="mt-1 font-body text-xs text-muted-foreground">
           Quality &amp; Hygiene - we never compromise
         </p>
       </footer>
