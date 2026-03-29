@@ -85,7 +85,7 @@ const Index = () => {
           </p>
           <div className="mt-4 font-body text-xs text-foreground leading-relaxed text-center">
             <a
-              href="https://www.google.com/maps?daddr=3rd+floor,+Shalin+Apartment,+52+Haribhakti+Colony,+Old+Padra+Rd,+Near+Baroda+Heart+Hospital,+Mirch+Masala+Lane,+Vadodara,+Gujarat+390007"
+              href="https://www.google.com/maps?rlz=1CAPXCU_enIN1158&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMgYIABBFGDwyDggBEEUYJxg7GIAEGIoFMgYIAhBFGDsyBggDEEUYOTIGCAQQRRg7MgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIMzkyOGowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KXVU5BOjyF85MSHXCkEoAHvw&daddr=3+rd+floor,+Shalin+Apartment,+near+Toprani+lab,+mirch+masala+lane,+52,+Old+Padra+Rd,+Haribhakti+Colony,+Vadodara,+Gujarat+390007"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-primary hover:underline"
