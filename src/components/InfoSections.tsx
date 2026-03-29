@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Lightbulb, Phone, CreditCard, Info } from "lucide-react";
+import { Lightbulb, CreditCard, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const buttons = [
   { label: "About Us", icon: Info, to: "/about" },
   { label: "Concept", icon: Lightbulb, to: "/concept" },
-  { label: "Contact Us", icon: Phone, to: "/contact" },
   { label: "Payment", icon: CreditCard, to: "/payment" },
 ];
 
@@ -16,7 +15,7 @@ const InfoSections = () => {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="flex flex-col gap-2"
+        className="grid grid-cols-3 gap-2"
       >
         {buttons.map((btn) => (
           <Link
