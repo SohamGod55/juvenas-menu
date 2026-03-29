@@ -18,9 +18,6 @@ const Index = () => {
     }))
     .filter((cat) => cat.items.length > 0);
 
-  // Track which group headers have been rendered
-  const renderedGroups = new Set<string>();
-
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
