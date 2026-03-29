@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Cake, Search, MapPin, Phone } from "lucide-react";
+import { Cake, Search, MapPin } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import InfoSections from "@/components/InfoSections";
 import MenuSection from "@/components/MenuSection";
@@ -81,9 +81,20 @@ const Index = () => {
             ☺ — Our top recommendations
           </p>
           <p className="mb-4 font-body text-sm text-foreground">
-            * - Indicates seasonal availability of Products.
+            Indicates seasonal availability of Products.
           </p>
-          <div className="flex flex-col items-center gap-1 text-center font-display text-xl font-bold text-primary md:text-2xl">
+          <div className="mt-4 font-body text-xs text-foreground leading-relaxed text-center">
+            <a
+              href="https://www.google.com/maps?daddr=3rd+floor,+Shalin+Apartment,+52+Haribhakti+Colony,+Old+Padra+Rd,+Near+Baroda+Heart+Hospital,+Mirch+Masala+Lane,+Vadodara,+Gujarat+390007"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-primary hover:underline"
+            >
+              <MapPin className="h-3.5 w-3.5" />
+              3rd floor, Shalin Apartment, 52 Haribhakti Colony, Old Padra Rd, Near Baroda Heart Hospital, Mirch Masala Lane, Vadodara, Gujarat 390007
+            </a>
+          </div>
+          <div className="mt-3 flex flex-col items-center gap-1 text-center font-display text-xl font-bold text-primary md:text-2xl">
             <a href="tel:+919227104646" className="hover:underline">+91 9227104646</a>
             <a href="tel:+919724870015" className="hover:underline">+91 9724870015</a>
           </div>
@@ -99,25 +110,6 @@ const Index = () => {
           <p className="mt-1 font-body text-xs text-muted-foreground">
             Quality &amp; Hygiene - we never compromise
           </p>
-          <div className="mt-3 font-body text-xs text-foreground leading-relaxed">
-            <a
-              href="https://www.google.com/maps?daddr=3rd+floor,+Shalin+Apartment,+52+Haribhakti+Colony,+Old+Padra+Rd,+Near+Baroda+Heart+Hospital,+Mirch+Masala+Lane,+Vadodara,+Gujarat+390007"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-primary hover:underline"
-            >
-              <MapPin className="h-3.5 w-3.5" />
-              3rd floor, Shalin Apartment, 52 Haribhakti Colony, Old Padra Rd, Near Baroda Heart Hospital, Mirch Masala Lane, Vadodara, Gujarat 390007
-            </a>
-          </div>
-          <div className="mt-2 flex flex-col items-center gap-0.5 font-body text-sm text-primary font-semibold">
-            <a href="tel:+919227104646" className="inline-flex items-center gap-1 hover:underline">
-              <Phone className="h-3.5 w-3.5" /> +91 9227104646
-            </a>
-            <a href="tel:+919724870015" className="inline-flex items-center gap-1 hover:underline">
-              <Phone className="h-3.5 w-3.5" /> +91 9724870015
-            </a>
-          </div>
         </div>
       </footer>
     </div>
