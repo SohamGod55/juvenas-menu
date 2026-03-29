@@ -54,21 +54,9 @@ const Index = () => {
         </motion.div>
 
         {/* Menu sections with group headers */}
-        {filteredCategories.map((cat, i) => {
-          const showGroupHeader = cat.group && !renderedGroups.has(cat.group);
-          if (cat.group) renderedGroups.add(cat.group);
-
-          return (
-            <div key={cat.title}>
-              {showGroupHeader && (
-                <h3 className="mt-6 mb-2 font-display text-lg font-bold text-primary first:mt-0">
-                  {cat.group}
-                </h3>
-              )}
-              <MenuSection category={cat} index={i} defaultOpen={i === 0} />
-            </div>
-          );
-        })}
+        {filteredCategories.map((cat, i) => (
+          <MenuSection key={cat.title} category={cat} index={i} defaultOpen={i === 0} />
+        ))}
 
         {filteredCategories.length === 0 && (
           <p className="py-20 text-center font-body text-muted-foreground">

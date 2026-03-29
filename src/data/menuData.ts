@@ -5,68 +5,55 @@ export interface MenuItem {
   priceHalfKg?: string;
   priceKg?: string;
   pricePc?: string;
+  subCategory?: string;
 }
 
 export interface MenuCategory {
   title: string;
-  group?: string;
   items: MenuItem[];
 }
 
 export const menuData: MenuCategory[] = [
-  // Cake/Gateaux group
   {
-    title: "Chocolate",
-    group: "Cake / Gateaux",
+    title: "Cake / Gateaux",
     items: [
-      { no: 1, name: "Chocolate Temptation", priceHalfKg: "1,000", priceKg: "2,000" },
-      { no: 2, name: "White Forest", priceHalfKg: "1,010", priceKg: "2,020" },
-      { no: 3, name: "Chocolate Truffle", priceHalfKg: "1,040", priceKg: "2,080" },
-      { no: 4, name: "Choc Ferrero Rocher", priceHalfKg: "1,140", priceKg: "2,280" },
-      { no: 5, name: "Choc Rum n Raisin", priceHalfKg: "1,090", priceKg: "2,180" },
-      { no: 6, name: "Choc Walnut/Roasted Almond", priceHalfKg: "1,040", priceKg: "2,080" },
-      { no: 7, name: "Belgian Choc Ganache", recommended: true, priceHalfKg: "1,325", priceKg: "2,650" },
-      { no: 8, name: "Black Forest", priceHalfKg: "1,000", priceKg: "2,000" },
-      { no: 9, name: "Choc Butter Scotch", priceHalfKg: "980", priceKg: "1,960" },
-      { no: 10, name: "Chocolate Nougat", priceHalfKg: "1,170", priceKg: "2,340" },
-      { no: 11, name: "Ultimate Choc Gateaux", priceHalfKg: "1,170", priceKg: "2,340" },
-      { no: 12, name: "Choc Orange Gateaux", priceHalfKg: "1,060", priceKg: "2,120" },
-      { no: 13, name: "Choc Strawberry Gateaux", priceHalfKg: "1,090", priceKg: "2,180" },
-      { no: 14, name: "Choc Salted Caramel", priceHalfKg: "1,170", priceKg: "2,340" },
-      { no: 15, name: "Red Velvet Gateaux", priceHalfKg: "1,150", priceKg: "2,300" },
-      { no: 16, name: "Crunchy Chocolate", priceHalfKg: "1,230", priceKg: "2,460" },
-      { no: 17, name: "Chocolate All over", priceHalfKg: "1,150", priceKg: "2,300" },
-      { no: 18, name: "Lotus Biscoff", priceHalfKg: "1,250", priceKg: "2,500" },
+      // Chocolate
+      { no: 1, name: "Chocolate Temptation", subCategory: "Chocolate", priceHalfKg: "1,000", priceKg: "2,000" },
+      { no: 2, name: "White Forest", subCategory: "Chocolate", priceHalfKg: "1,010", priceKg: "2,020" },
+      { no: 3, name: "Chocolate Truffle", subCategory: "Chocolate", priceHalfKg: "1,040", priceKg: "2,080" },
+      { no: 4, name: "Choc Ferrero Rocher", subCategory: "Chocolate", priceHalfKg: "1,140", priceKg: "2,280" },
+      { no: 5, name: "Choc Rum n Raisin", subCategory: "Chocolate", priceHalfKg: "1,090", priceKg: "2,180" },
+      { no: 6, name: "Choc Walnut/Roasted Almond", subCategory: "Chocolate", priceHalfKg: "1,040", priceKg: "2,080" },
+      { no: 7, name: "Belgian Choc Ganache", subCategory: "Chocolate", recommended: true, priceHalfKg: "1,325", priceKg: "2,650" },
+      { no: 8, name: "Black Forest", subCategory: "Chocolate", priceHalfKg: "1,000", priceKg: "2,000" },
+      { no: 9, name: "Choc Butter Scotch", subCategory: "Chocolate", priceHalfKg: "980", priceKg: "1,960" },
+      { no: 10, name: "Chocolate Nougat", subCategory: "Chocolate", priceHalfKg: "1,170", priceKg: "2,340" },
+      { no: 11, name: "Ultimate Choc Gateaux", subCategory: "Chocolate", priceHalfKg: "1,170", priceKg: "2,340" },
+      { no: 12, name: "Choc Orange Gateaux", subCategory: "Chocolate", priceHalfKg: "1,060", priceKg: "2,120" },
+      { no: 13, name: "Choc Strawberry Gateaux", subCategory: "Chocolate", priceHalfKg: "1,090", priceKg: "2,180" },
+      { no: 14, name: "Choc Salted Caramel", subCategory: "Chocolate", priceHalfKg: "1,170", priceKg: "2,340" },
+      { no: 15, name: "Red Velvet Gateaux", subCategory: "Chocolate", priceHalfKg: "1,150", priceKg: "2,300" },
+      { no: 16, name: "Crunchy Chocolate", subCategory: "Chocolate", priceHalfKg: "1,230", priceKg: "2,460" },
+      { no: 17, name: "Chocolate All over", subCategory: "Chocolate", priceHalfKg: "1,150", priceKg: "2,300" },
+      { no: 18, name: "Lotus Biscoff", subCategory: "Chocolate", priceHalfKg: "1,250", priceKg: "2,500" },
+      // Fresh Fruit
+      { no: 19, name: "Tangy Orange Gateaux", subCategory: "Fresh Fruit*", priceHalfKg: "990", priceKg: "1,980" },
+      { no: 20, name: "Fresh Pineapple", subCategory: "Fresh Fruit*", priceHalfKg: "950", priceKg: "1,900" },
+      { no: 21, name: "Fresh Strawberry", subCategory: "Fresh Fruit*", priceHalfKg: "1,000", priceKg: "2,000" },
+      { no: 22, name: "White Choc & Raspberry", subCategory: "Fresh Fruit*", recommended: true, priceHalfKg: "1,180", priceKg: "2,360" },
+      { no: 23, name: "Apple Caramel", subCategory: "Fresh Fruit*", priceHalfKg: "1,000", priceKg: "2,000" },
+      { no: 24, name: "Raspberry Apple", subCategory: "Fresh Fruit*", priceHalfKg: "1,100", priceKg: "2,200" },
+      { no: 25, name: "Kiwi-Strawberry", subCategory: "Fresh Fruit*", priceHalfKg: "1,000", priceKg: "2,000" },
+      { no: 26, name: "Blueberry Gateaux", subCategory: "Fresh Fruit*", priceHalfKg: "1,000", priceKg: "2,000" },
+      { no: 27, name: "Fresh Mango Gateaux", subCategory: "Fresh Fruit*", recommended: true, priceHalfKg: "1,050", priceKg: "2,100" },
+      { no: 28, name: "Rose Pistachio", subCategory: "Fresh Fruit*", priceHalfKg: "1,090", priceKg: "2,180" },
+      // Coffee
+      { no: 29, name: "Mocha", subCategory: "Coffee", priceHalfKg: "1,010", priceKg: "2,020" },
+      { no: 30, name: "Choc Irish Coffee", subCategory: "Coffee", recommended: true, priceHalfKg: "1,010", priceKg: "2,020" },
     ],
   },
-  {
-    title: "Fresh Fruit*",
-    group: "Cake / Gateaux",
-    items: [
-      { no: 1, name: "Tangy Orange Gateaux", priceHalfKg: "990", priceKg: "1,980" },
-      { no: 2, name: "Fresh Pineapple", priceHalfKg: "950", priceKg: "1,900" },
-      { no: 3, name: "Fresh Strawberry", priceHalfKg: "1,000", priceKg: "2,000" },
-      { no: 4, name: "White Choc & Raspberry", recommended: true, priceHalfKg: "1,180", priceKg: "2,360" },
-      { no: 5, name: "Apple Caramel", priceHalfKg: "1,000", priceKg: "2,000" },
-      { no: 6, name: "Raspberry Apple", priceHalfKg: "1,100", priceKg: "2,200" },
-      { no: 7, name: "Kiwi-Strawberry", priceHalfKg: "1,000", priceKg: "2,000" },
-      { no: 8, name: "Blueberry Gateaux", priceHalfKg: "1,000", priceKg: "2,000" },
-      { no: 9, name: "Fresh Mango Gateaux", recommended: true, priceHalfKg: "1,050", priceKg: "2,100" },
-      { no: 10, name: "Rose Pistachio", priceHalfKg: "1,090", priceKg: "2,180" },
-    ],
-  },
-  {
-    title: "Coffee",
-    group: "Cake / Gateaux",
-    items: [
-      { no: 1, name: "Mocha", priceHalfKg: "1,010", priceKg: "2,020" },
-      { no: 2, name: "Choc Irish Coffee", recommended: true, priceHalfKg: "1,010", priceKg: "2,020" },
-    ],
-  },
-  // Tea Cakes group
   {
     title: "Tea Cakes",
-    group: "Tea Cakes",
     items: [
       { no: 1, name: "Nuts n Caramel", priceHalfKg: "800", priceKg: "1,600" },
       { no: 2, name: "Marble cake", priceHalfKg: "800", priceKg: "1,600" },
@@ -89,17 +76,11 @@ export const menuData: MenuCategory[] = [
       { no: 19, name: "Fig Honey n Walnut", priceHalfKg: "920", priceKg: "1,840" },
       { no: 20, name: "Humming bird cake", priceHalfKg: "920", priceKg: "1,840" },
       { no: 21, name: "Fig Date Walnut (Sugar free/Gluten Free/Dairy free)", priceHalfKg: "900", priceKg: "1,800" },
+      // Addons
+      { no: 22, name: "Cream Cheese Frosting (Add-on)", priceHalfKg: "250", priceKg: "500" },
+      { no: 23, name: "Extra Nuts (Add-on)", priceHalfKg: "60", priceKg: "120" },
     ],
   },
-  {
-    title: "Addons",
-    group: "Tea Cakes",
-    items: [
-      { no: 1, name: "Cream Cheese Frosting", priceHalfKg: "250", priceKg: "500" },
-      { no: 2, name: "Extra Nuts", priceHalfKg: "60", priceKg: "120" },
-    ],
-  },
-  // Standalone categories
   {
     title: "Desserts",
     items: [
