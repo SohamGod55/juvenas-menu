@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="bg-primary py-4 px-4">
+      <div className="border-b-2 border-primary py-4 px-4">
         <div className="mx-auto max-w-3xl flex items-center gap-3">
-          <Link to="/" className="text-primary-foreground hover:opacity-80 transition-opacity">
+          <Link to="/" className="text-primary hover:opacity-80 transition-opacity">
             <ArrowLeft className="h-5 w-5" />
           </Link>
-          <h1 className="font-display text-xl font-bold text-primary-foreground">Contact Us</h1>
+          <h1 className="font-display text-xl font-bold text-primary">Contact Us</h1>
         </div>
       </div>
 
@@ -20,7 +20,7 @@ const ContactPage = () => {
         transition={{ duration: 0.4 }}
         className="mx-auto max-w-3xl px-4 py-8"
       >
-        <div className="rounded-xl border border-border bg-card p-6 shadow-sm space-y-6">
+        <div className="rounded-xl border-2 border-primary bg-background p-6 shadow-sm space-y-6">
           <div className="flex items-start gap-3">
             <Phone className="h-5 w-5 mt-0.5 text-primary" />
             <div>
@@ -38,10 +38,15 @@ const ContactPage = () => {
             <div>
               <p className="font-display font-semibold text-foreground">Address</p>
               <p className="font-body text-sm text-muted-foreground mt-1">
-                3rd floor, Shalin Apartment, near Toprani lab, Mirch Masala Lane, 52, Old Padra Rd, Haribhakti Colony, Vadodara, Gujarat 390007
+                3rd floor, Shalin Apartment,<br />
+                52 Haribhakti Colony,<br />
+                Old Padra Rd,<br />
+                Near Baroda Heart Hospital,<br />
+                Mirch Masala Lane,<br />
+                Vadodara, Gujarat 390007
               </p>
               <a
-                href="https://www.google.com/maps?daddr=3+rd+floor,+Shalin+Apartment,+near+Toprani+lab,+mirch+masala+lane,+52,+Old+Padra+Rd,+Haribhakti+Colony,+Vadodara,+Gujarat+390007"
+                href="https://www.google.com/maps?daddr=3rd+floor,+Shalin+Apartment,+52+Haribhakti+Colony,+Old+Padra+Rd,+Near+Baroda+Heart+Hospital,+Mirch+Masala+Lane,+Vadodara,+Gujarat+390007"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center gap-1 text-primary text-sm font-semibold hover:underline"

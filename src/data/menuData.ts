@@ -76,9 +76,9 @@ export const menuData: MenuCategory[] = [
       { no: 19, name: "Fig Honey n Walnut", priceHalfKg: "920", priceKg: "1,840" },
       { no: 20, name: "Humming bird cake", priceHalfKg: "920", priceKg: "1,840" },
       { no: 21, name: "Fig Date Walnut (Sugar free/Gluten Free/Dairy free)", priceHalfKg: "900", priceKg: "1,800" },
-      // Addons
-      { no: 22, name: "Cream Cheese Frosting (Add-on)", priceHalfKg: "250", priceKg: "500" },
-      { no: 23, name: "Extra Nuts (Add-on)", priceHalfKg: "60", priceKg: "120" },
+      // Add-ons
+      { no: 1, name: "Cream Cheese Frosting", subCategory: "Add-ons", priceHalfKg: "250", priceKg: "500" },
+      { no: 2, name: "Extra Nuts", subCategory: "Add-ons", priceHalfKg: "60", priceKg: "120" },
     ],
   },
   {
@@ -122,12 +122,12 @@ export const menuData: MenuCategory[] = [
     ],
   },
   {
-    title: "Hand Crafted Chocolates: Rs 2500/kg",
+    title: "Hand Crafted Chocolates",
     items: [
-      { no: 1, name: "Roasted Nuts", priceKg: "2,500" },
-      { no: 2, name: "Rum n Raisin", priceKg: "2,500" },
-      { no: 3, name: "Orange Rind", priceKg: "2,500" },
-      { no: 4, name: "Irish Coffee", priceKg: "2,500" },
+      { no: 1, name: "Roasted Nuts", priceKg: "2,600" },
+      { no: 2, name: "Rum n Raisin", priceKg: "2,600" },
+      { no: 3, name: "Orange Rind", priceKg: "2,600" },
+      { no: 4, name: "Irish Coffee", priceKg: "2,600" },
       { no: 5, name: "Premium Nuts (3000/kg)", recommended: true, priceKg: "3,000" },
     ],
   },

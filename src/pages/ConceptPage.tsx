@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const ConceptPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="bg-primary py-4 px-4">
+      <div className="border-b-2 border-primary py-4 px-4">
         <div className="mx-auto max-w-3xl flex items-center gap-3">
-          <Link to="/" className="text-primary-foreground hover:opacity-80 transition-opacity">
+          <Link to="/" className="text-primary hover:opacity-80 transition-opacity">
             <ArrowLeft className="h-5 w-5" />
           </Link>
-          <h1 className="font-display text-xl font-bold text-primary-foreground">Concept</h1>
+          <h1 className="font-display text-xl font-bold text-primary">Concept</h1>
         </div>
       </div>
 
@@ -20,8 +20,8 @@ const ConceptPage = () => {
         transition={{ duration: 0.4 }}
         className="mx-auto max-w-3xl px-4 py-8"
       >
-        <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="font-display text-lg font-semibold text-foreground mb-4">Our Concept</h2>
+        <div className="rounded-xl border-2 border-primary bg-background p-6 shadow-sm">
+          <h2 className="font-display text-lg font-semibold text-primary mb-4">Our Concept</h2>
           <ul className="list-disc pl-5 space-y-3 font-body text-sm text-muted-foreground leading-relaxed">
             <li>All our creations are made fresh to order. Kindly place orders at least one day in advance and specify if you require an eggless option.</li>
             <li>We request orders to be placed via <strong className="text-foreground">phone call only</strong>, to ensure clarity and personal attention. <em>Kindly do not WhatsApp or message your orders.</em></li>
