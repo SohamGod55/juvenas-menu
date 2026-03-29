@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Cake, Search } from "lucide-react";
+import { Cake, Search, MapPin, Phone } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import InfoSections from "@/components/InfoSections";
 import MenuSection from "@/components/MenuSection";
@@ -31,12 +31,12 @@ const Index = () => {
           viewport={{ once: true }}
           className="mb-8 flex flex-col items-center gap-3"
         >
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Cake className="h-5 w-5 text-accent" />
-            <span className="font-body text-sm uppercase tracking-[0.2em]">
-              Our Menu
+          <div className="flex items-center gap-2 text-primary">
+            <Cake className="h-5 w-5" />
+            <span className="font-display text-lg font-bold uppercase tracking-[0.15em] md:text-xl">
+              Menu
             </span>
-            <Cake className="h-5 w-5 text-accent" />
+            <Cake className="h-5 w-5" />
           </div>
           <div className="relative w-full max-w-md">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -45,12 +45,12 @@ const Index = () => {
               placeholder="Search cakes & desserts..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/40"
+              className="w-full rounded-lg border-2 border-primary bg-background py-2.5 pl-10 pr-4 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
             />
           </div>
         </motion.div>
 
-        {/* Menu sections with group headers */}
+        {/* Menu sections */}
         {filteredCategories.map((cat, i) => (
           <MenuSection key={cat.title} category={cat} index={i} defaultOpen={false} />
         ))}
@@ -66,10 +66,10 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 rounded-xl border border-border bg-card p-6 shadow-sm"
+          className="mt-12 rounded-xl border-2 border-primary bg-background p-6 shadow-sm"
         >
           <p className="mb-2 font-display text-base font-semibold text-foreground">
-            Kindly specify if you need the order to be eggless.
+            Kindly specify if you need your order to be eggless.
           </p>
           <p className="mb-1.5 font-body text-sm text-foreground">
             Eggless cakes (Rs 100/Kg extra charge)
@@ -77,26 +77,48 @@ const Index = () => {
           <p className="mb-1.5 font-body text-sm text-foreground">
             Fancy Cakes &amp; Wedding Cakes (25-40% Extra Charge)
           </p>
-          <p className="mb-1.5 font-body text-sm text-foreground flex items-center gap-1.5">
+          <p className="mb-1.5 font-body text-sm text-foreground">
             ☺ — Our top recommendations
           </p>
           <p className="mb-4 font-body text-sm text-foreground">
-            Indicates seasonal availability of Products.
+            * - Indicates seasonal availability of Products.
           </p>
-          <p className="text-center font-display text-2xl font-bold text-foreground md:text-3xl">
-            Mo. 9227104646, 9724870015
-          </p>
+          <div className="flex flex-col items-center gap-1 text-center font-display text-xl font-bold text-primary md:text-2xl">
+            <a href="tel:+919227104646" className="hover:underline">+91 9227104646</a>
+            <a href="tel:+919724870015" className="hover:underline">+91 9724870015</a>
+          </div>
         </motion.div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-secondary/30 py-6 text-center">
-        <p className="font-display text-base font-semibold text-foreground">
-          Juvenas Bakery
-        </p>
-        <p className="mt-1 font-body text-xs text-muted-foreground">
-          Quality &amp; Hygiene - we never compromise
-        </p>
+      <footer className="border-t-2 border-primary bg-background py-6 px-4">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="font-display text-base font-semibold text-primary">
+            Juvenas Bakery
+          </p>
+          <p className="mt-1 font-body text-xs text-muted-foreground">
+            Quality &amp; Hygiene - we never compromise
+          </p>
+          <div className="mt-3 font-body text-xs text-foreground leading-relaxed">
+            <a
+              href="https://www.google.com/maps?daddr=3rd+floor,+Shalin+Apartment,+52+Haribhakti+Colony,+Old+Padra+Rd,+Near+Baroda+Heart+Hospital,+Mirch+Masala+Lane,+Vadodara,+Gujarat+390007"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-primary hover:underline"
+            >
+              <MapPin className="h-3.5 w-3.5" />
+              3rd floor, Shalin Apartment, 52 Haribhakti Colony, Old Padra Rd, Near Baroda Heart Hospital, Mirch Masala Lane, Vadodara, Gujarat 390007
+            </a>
+          </div>
+          <div className="mt-2 flex flex-col items-center gap-0.5 font-body text-sm text-primary font-semibold">
+            <a href="tel:+919227104646" className="inline-flex items-center gap-1 hover:underline">
+              <Phone className="h-3.5 w-3.5" /> +91 9227104646
+            </a>
+            <a href="tel:+919724870015" className="inline-flex items-center gap-1 hover:underline">
+              <Phone className="h-3.5 w-3.5" /> +91 9724870015
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
