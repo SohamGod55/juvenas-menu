@@ -13,10 +13,25 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const isDesserts = category.title === "Desserts";
+  const hasSubCategories = category.items.some((i) => i.subCategory);
 
   const hasHalfKg = category.items.some((i) => i.priceHalfKg);
   const hasKg = category.items.some((i) => i.priceKg);
   const hasPc = category.items.some((i) => i.pricePc);
+
+  // Group items by subCategory if present
+  const groupedItems = hasSubCategories
+    ? category.items.reduce<{ sub: string; items: typeof category.items }[]>((acc, item) => {
+        const sub = item.subCategory || "";
+        const last = acc[acc.length - 1];
+        if (last && last.sub === sub) {
+          last.items.push(item);
+        } else {
+          acc.push({ sub, items: [item] });
+        }
+        return acc;
+      }, [])
+    : null;
 
   return (
     <motion.section
@@ -63,86 +78,39 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
                       </th>
                       {isDesserts ? (
                         <>
-                          <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">
-                            500 GM
-                          </th>
-                          <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">
-                            750 GM
-                          </th>
-                          <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">
-                            1 KG
-                          </th>
+                          <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">500 GM</th>
+                          <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">750 GM</th>
+                          <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">1 KG</th>
                         </>
                       ) : (
                         <>
-                          {hasHalfKg && (
-                            <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">
-                              ½ KG
-                            </th>
-                          )}
-                          {hasKg && (
-                            <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">
-                              1 KG
-                            </th>
-                          )}
-                          {hasPc && (
-                            <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">
-                              PER PC
-                            </th>
-                          )}
+                          {hasHalfKg && <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">½ KG</th>}
+                          {hasKg && <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">1 KG</th>}
+                          {hasPc && <th className="px-2 py-2 text-right font-body text-[10px] font-bold uppercase tracking-wider text-primary md:px-4 md:text-xs">PER PC</th>}
                         </>
                       )}
                     </tr>
                   </thead>
                   <tbody>
-                    {category.items.map((item, i) => (
-                      <tr
-                        key={item.no}
-                        className={`border-b border-border/50 transition-colors hover:bg-secondary/30 ${
-                          i % 2 === 0 ? "bg-card" : "bg-card/60"
-                        }`}
-                        style={item.recommended ? { background: "hsl(var(--primary) / 0.06)" } : undefined}
-                      >
-                        <td className="px-2 py-2 font-body text-xs text-muted-foreground md:px-4 md:text-sm">
-                          {item.no}
-                        </td>
-                        <td className="px-2 py-2 font-body text-xs font-medium text-foreground md:px-4 md:text-sm">
-                          {item.name}
-                          {item.recommended && <span className="ml-1 text-sm" title="Chef's Pick">☺</span>}
-                        </td>
-                        {isDesserts ? (
+                    {groupedItems
+                      ? groupedItems.map((group) => (
                           <>
-                            <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">
-                              {item.priceHalfKg ? `₹${item.priceHalfKg}` : "—"}
-                            </td>
-                            <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">
-                              {item.priceKg ? `₹${item.priceKg}` : "—"}
-                            </td>
-                            <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">
-                              {item.pricePc ? `₹${item.pricePc}` : "—"}
-                            </td>
+                            <tr key={`sub-${group.sub}`} className="bg-primary/10">
+                              <td
+                                colSpan={10}
+                                className="px-2 py-1.5 font-display text-xs font-bold text-primary md:px-4 md:text-sm"
+                              >
+                                {group.sub}
+                              </td>
+                            </tr>
+                            {group.items.map((item, i) => (
+                              <TableRow key={item.no} item={item} i={i} isDesserts={isDesserts} hasHalfKg={hasHalfKg} hasKg={hasKg} hasPc={hasPc} />
+                            ))}
                           </>
-                        ) : (
-                          <>
-                            {hasHalfKg && (
-                              <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">
-                                {item.priceHalfKg ? `₹${item.priceHalfKg}` : "—"}
-                              </td>
-                            )}
-                            {hasKg && (
-                              <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">
-                                {item.priceKg ? `₹${item.priceKg}` : "—"}
-                              </td>
-                            )}
-                            {hasPc && (
-                              <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">
-                                {item.pricePc ? `₹${item.pricePc}` : "—"}
-                              </td>
-                            )}
-                          </>
-                        )}
-                      </tr>
-                    ))}
+                        ))
+                      : category.items.map((item, i) => (
+                          <TableRow key={item.no} item={item} i={i} isDesserts={isDesserts} hasHalfKg={hasHalfKg} hasKg={hasKg} hasPc={hasPc} />
+                        ))}
                   </tbody>
                 </table>
               </div>
@@ -153,5 +121,42 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
     </motion.section>
   );
 };
+
+interface TableRowProps {
+  item: { no: number; name: string; recommended?: boolean; priceHalfKg?: string; priceKg?: string; pricePc?: string };
+  i: number;
+  isDesserts: boolean;
+  hasHalfKg: boolean;
+  hasKg: boolean;
+  hasPc: boolean;
+}
+
+const TableRow = ({ item, i, isDesserts, hasHalfKg, hasKg, hasPc }: TableRowProps) => (
+  <tr
+    className={`border-b border-border/50 transition-colors hover:bg-secondary/30 ${
+      i % 2 === 0 ? "bg-card" : "bg-card/60"
+    }`}
+    style={item.recommended ? { background: "hsl(var(--primary) / 0.06)" } : undefined}
+  >
+    <td className="px-2 py-2 font-body text-xs text-muted-foreground md:px-4 md:text-sm">{item.no}</td>
+    <td className="px-2 py-2 font-body text-xs font-medium text-foreground md:px-4 md:text-sm">
+      {item.name}
+      {item.recommended && <span className="ml-1 text-sm" title="Chef's Pick">☺</span>}
+    </td>
+    {isDesserts ? (
+      <>
+        <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">{item.priceHalfKg ? `₹${item.priceHalfKg}` : "—"}</td>
+        <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">{item.priceKg ? `₹${item.priceKg}` : "—"}</td>
+        <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">{item.pricePc ? `₹${item.pricePc}` : "—"}</td>
+      </>
+    ) : (
+      <>
+        {hasHalfKg && <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">{item.priceHalfKg ? `₹${item.priceHalfKg}` : "—"}</td>}
+        {hasKg && <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">{item.priceKg ? `₹${item.priceKg}` : "—"}</td>}
+        {hasPc && <td className="px-2 py-2 text-right font-body text-xs text-foreground md:px-4 md:text-sm">{item.pricePc ? `₹${item.pricePc}` : "—"}</td>}
+      </>
+    )}
+  </tr>
+);
 
 export default MenuSection;
