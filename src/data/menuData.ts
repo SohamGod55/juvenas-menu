@@ -6,6 +6,7 @@ export interface MenuItem {
   priceKg?: string;
   pricePc?: string;
   subCategory?: string;
+  subItems?: string[];
 }
 
 export interface MenuCategory {
@@ -86,20 +87,20 @@ export const menuData: MenuCategory[] = [
     items: [
       { no: 1, name: "Dark Chocolate Sin", priceKg: "1,950", pricePc: "2,600" },
       { no: 2, name: "Irish Coffee Biscotti", priceKg: "1,785", pricePc: "2,380" },
-      { no: 3, name: "Exotic Fruit Trifle Pudding", recommended: true, priceKg: "1,695", pricePc: "2,260" },
-      { no: 4, name: "Cheese Cake (strawberry/blueberry/Raspberry)", priceHalfKg: "1,230", pricePc: "2,460" },
+      { no: 3, name: "Exotic Fruit\nTrifle Pudding", recommended: true, priceKg: "1,695", pricePc: "2,260" },
+      { no: 4, name: "Cheese Cake", subItems: ["Strawberry", "Blueberry", "Raspberry"], priceHalfKg: "1,230", pricePc: "2,460" },
       { no: 5, name: "Tiramisu", recommended: true, priceKg: "1,830", pricePc: "2,440" },
       { no: 6, name: "Crème Brûlée (min 8)", pricePc: "180/pc" },
       { no: 7, name: "Banoffee Pie", priceHalfKg: "1,100", pricePc: "2,200" },
       { no: 8, name: "Tres Leches Gold", priceKg: "1,785", pricePc: "2,380" },
       { no: 9, name: "Molten Choc with sauce", priceHalfKg: "1,110", pricePc: "2,220" },
-      { no: 10, name: "Choc Orange/Strawberry Trifle", priceKg: "1,785", pricePc: "2,380" },
+      { no: 10, name: "Choc Orange/Strawberry\nTrifle", priceKg: "1,785", pricePc: "2,380" },
       { no: 11, name: "Choc Nougat Biscotti", recommended: true, priceKg: "1,845", pricePc: "2,460" },
       { no: 12, name: "Éclairs/Profet rolls (min 9pc)", pricePc: "2,320" },
-      { no: 13, name: "New York Cheese Cake", priceHalfKg: "1,260", pricePc: "2,520" },
+      { no: 13, name: "New York\nCheese Cake", priceHalfKg: "1,260", pricePc: "2,520" },
       { no: 14, name: "Citrus Yogi bliss", priceHalfKg: "1,550" },
       { no: 15, name: "Choc Hazelnut Swiss Rolls", priceHalfKg: "1,190", pricePc: "2,380" },
-      { no: 16, name: "Choc Tuxedo Cheese Cake", recommended: true, pricePc: "3,500" },
+      { no: 16, name: "Choc Tuxedo\nCheese Cake", recommended: true, pricePc: "3,500" },
       { no: 17, name: "Choc Mud Pie", priceKg: "1,875", pricePc: "2,500" },
       { no: 18, name: "Lotus Biscoff Cheese cake", priceHalfKg: "1,350", pricePc: "2,700" },
     ],
