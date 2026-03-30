@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Cake, Search, MapPin } from "lucide-react";
+import { Search, MapPin } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import InfoSections from "@/components/InfoSections";
 import MenuSection from "@/components/MenuSection";
@@ -76,7 +76,7 @@ const Index = () => {
             Fancy Cakes &amp; Wedding Cakes (25-40% Extra Charge)
           </p>
           <p className="mb-1.5 font-body text-sm text-foreground">
-            ☺ — Our top recommendations
+            ⭐ CHEF'S PICK — Our top recommendations
           </p>
           <p className="mb-4 font-body text-sm text-foreground">
             * - Indicates seasonal availability of Products.
