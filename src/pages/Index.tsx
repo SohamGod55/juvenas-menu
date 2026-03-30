@@ -76,10 +76,10 @@ const Index = () => {
             Fancy Cakes &amp; Wedding Cakes (25-40% Extra Charge)
           </p>
           <p className="mb-1.5 font-body text-sm text-foreground">
-            ☺ — Our top recommendations
+            ☺ Our top recommendations
           </p>
           <p className="mb-4 font-body text-sm text-foreground">
-            * - Indicates seasonal availability of Products.
+            * Indicates seasonal availability of Products.
           </p>
           <div className="mt-4 font-body text-xs text-foreground leading-relaxed text-center">
             <a
@@ -92,8 +92,9 @@ const Index = () => {
               3rd floor, Shalin Apartment, 52 Haribhakti Colony, Old Padra Rd, Near Baroda Heart Hospital, Mirch Masala Lane, Vadodara, Gujarat 390007
             </a>
           </div>
-          <div className="mt-3 flex flex-col items-center gap-1 text-center font-display text-xl font-bold text-primary md:text-2xl">
+          <div className="mt-3 flex items-center justify-center gap-3 text-center font-display text-xl font-bold text-primary md:text-2xl">
             <a href="tel:+919227104646" className="hover:underline">+91 9227104646</a>
+            <span className="text-muted-foreground font-normal text-base">|</span>
             <a href="tel:+919724870015" className="hover:underline">+91 9724870015</a>
           </div>
         </motion.div>
