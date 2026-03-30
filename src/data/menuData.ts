@@ -6,6 +6,7 @@ export interface MenuItem {
   priceKg?: string;
   pricePc?: string;
   subCategory?: string;
+  subItems?: string[];
 }
 
 export interface MenuCategory {

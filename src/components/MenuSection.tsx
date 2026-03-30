@@ -119,7 +119,7 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
 };
 
 interface TableRowProps {
-  item: { no: number; name: string; recommended?: boolean; priceHalfKg?: string; priceKg?: string; pricePc?: string };
+  item: { no: number; name: string; recommended?: boolean; priceHalfKg?: string; priceKg?: string; pricePc?: string; subItems?: string[] };
   i: number;
   isDesserts: boolean;
   hasHalfKg: boolean;
@@ -135,9 +135,14 @@ const TableRow = ({ item, i, isDesserts, hasHalfKg, hasKg, hasPc, isAddon }: Tab
     }`}
   >
     <td className="px-2 py-2 font-body text-xs text-muted-foreground md:px-4 md:text-sm">{item.no}</td>
-    <td className={`px-2 py-2 font-body text-xs font-medium text-foreground md:px-4 md:text-sm ${isDesserts ? "" : ""}`}>
-      <span className={isDesserts ? "break-words" : ""}>{item.name}</span>
-      {item.recommended && <span className="ml-1 text-sm" title="Chef's Pick">☺</span>}
+    <td className={`px-2 py-2 font-body text-xs font-medium text-foreground md:px-4 md:text-sm`}>
+      <span className="whitespace-pre-line">{item.name}</span>
+      {item.subItems && (
+        <ul className="mt-0.5 ml-3 list-disc text-[10px] text-muted-foreground md:text-xs">
+          {item.subItems.map((si) => <li key={si}>{si}</li>)}
+        </ul>
+      )}
+      {item.recommended && <span className="ml-1 inline-flex items-center gap-0.5 rounded bg-primary/15 px-1.5 py-0.5 text-[9px] font-bold text-primary md:text-[10px]">⭐ CHEF'S PICK</span>}
     </td>
     {isDesserts ? (
       <>
