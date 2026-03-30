@@ -142,7 +142,7 @@ const TableRow = ({ item, i, isDesserts, hasHalfKg, hasKg, hasPc, isAddon }: Tab
           {item.subItems.map((si) => <li key={si}>{si}</li>)}
         </ul>
       )}
-      {item.recommended && <span className="ml-1 inline-flex items-center gap-0.5 rounded bg-primary/15 px-1.5 py-0.5 text-[9px] font-bold text-primary md:text-[10px]">⭐ CHEF'S PICK</span>}
+      {item.recommended && <span className="ml-1 text-sm" title="Chef's Pick">☺</span>}
     </td>
     {isDesserts ? (
       <>
