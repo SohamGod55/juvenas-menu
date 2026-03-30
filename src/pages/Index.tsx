@@ -32,11 +32,9 @@ const Index = () => {
           className="mb-8 flex flex-col items-center gap-3"
         >
           <div className="flex items-center gap-2 text-primary">
-            <Cake className="h-5 w-5" />
             <span className="font-display text-lg font-bold uppercase tracking-[0.15em] md:text-xl">
               Menu
             </span>
-            <Cake className="h-5 w-5" />
           </div>
           <div className="relative w-full max-w-md">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -81,7 +79,7 @@ const Index = () => {
             ☺ — Our top recommendations
           </p>
           <p className="mb-4 font-body text-sm text-foreground">
-            Indicates seasonal availability of Products.
+            * - Indicates seasonal availability of Products.
           </p>
           <div className="mt-4 font-body text-xs text-foreground leading-relaxed text-center">
             <a

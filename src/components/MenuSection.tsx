@@ -44,12 +44,9 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
         onClick={() => setIsOpen(!isOpen)}
         className="group flex w-full items-center justify-center gap-2 rounded-lg border-2 border-primary bg-background px-3 py-1.5 text-center transition-all hover:bg-primary hover:text-primary-foreground shadow-sm"
       >
-        <h2 className="font-display text-xs font-semibold text-primary group-hover:text-primary-foreground md:text-sm">
+        <h2 className="font-display text-sm font-semibold text-primary group-hover:text-primary-foreground md:text-base">
           {category.title}
         </h2>
-        <span className="rounded-full border border-primary px-2 py-0.5 text-[10px] font-bold text-primary group-hover:border-primary-foreground group-hover:text-primary-foreground">
-          {category.items.length}
-        </span>
         <ChevronDown
           className={`h-4 w-4 text-primary group-hover:text-primary-foreground transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
         />
