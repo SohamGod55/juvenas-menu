@@ -17,7 +17,7 @@
     --popover: 55 25% 95%;
     --popover-foreground: 5 12% 21%;
 
-    --primary: 348 86% 37%;
+    --primary: 5 12% 21%;
     --primary-foreground: 55 30% 95%;
 
     --secondary: 55 20% 85%;
@@ -26,7 +26,7 @@
     --muted: 55 15% 88%;
     --muted-foreground: 348 10% 45%;
 
-    --accent: 348 86% 37%;
+    --accent: 5 12% 21%;
     --accent-foreground: 55 30% 95%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,12 +34,12 @@
 
     --border: 55 15% 80%;
     --input: 55 15% 80%;
-    --ring: 348 86% 37%;
+    --ring: 5 12% 21%;
 
     --radius: 0.75rem;
 
-    --hero-gradient: linear-gradient(135deg, hsl(348 86% 37%), hsl(348 70% 28%));
-    --gold-shimmer: linear-gradient(90deg, hsl(348 86% 37%), hsl(348 70% 50%), hsl(348 86% 37%));
+    --hero-gradient: linear-gradient(135deg, hsl(5 12% 21%), hsl(5 12% 15%));
+    --gold-shimmer: linear-gradient(90deg, hsl(5 12% 21%), hsl(5 12% 35%), hsl(5 12% 21%));
     --warm-overlay: linear-gradient(180deg, hsl(55 30% 91% / 0), hsl(55 30% 91%));
 
     --cat-cakes: 15 65% 48%;

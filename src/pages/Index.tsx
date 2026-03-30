@@ -76,7 +76,7 @@ const Index = () => {
             Fancy Cakes &amp; Wedding Cakes (25-40% Extra Charge)
           </p>
           <p className="mb-1.5 font-body text-sm text-foreground">
-            ⭐ CHEF'S PICK — Our top recommendations
+            ☺ — Our top recommendations
           </p>
           <p className="mb-4 font-body text-sm text-foreground">
             * - Indicates seasonal availability of Products.
