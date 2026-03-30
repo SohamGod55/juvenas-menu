@@ -129,7 +129,7 @@ export const menuData: MenuCategory[] = [
       { no: 2, name: "Rum n Raisin", priceKg: "2,600" },
       { no: 3, name: "Orange Rind", priceKg: "2,600" },
       { no: 4, name: "Irish Coffee", priceKg: "2,600" },
-      { no: 5, name: "Premium Nuts (3000/kg)", recommended: true, priceKg: "3,000" },
+      { no: 5, name: "Premium Nuts", recommended: true, priceKg: "3,000" },
     ],
   },
 ];
