@@ -88,7 +88,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-primary hover:underline"
             >
-              <MapPin className="h-3.5 w-3.5" />
+              <MapPin className="h-5 w-5 flex-shrink-0" />
               3rd floor, Shalin Apartment, 52 Haribhakti Colony, Old Padra Rd, Near Baroda Heart Hospital, Mirch Masala Lane, Vadodara, Gujarat 390007
             </a>
           </div>
