@@ -42,7 +42,7 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group flex w-full items-center justify-center gap-2 rounded-lg border-2 border-primary bg-background px-3 py-1.5 text-center transition-all hover:bg-primary hover:text-primary-foreground shadow-sm"
+        className="group flex w-full items-center justify-center gap-2 rounded-lg border-2 border-primary bg-transparent px-3 py-1.5 text-center transition-all hover:bg-primary hover:text-primary-foreground shadow-sm"
       >
         <h2 className="font-display text-sm font-semibold text-primary group-hover:text-primary-foreground md:text-base">
           {category.title}
@@ -61,7 +61,7 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="rounded-b-lg border-x-2 border-b-2 border-primary bg-background">
+            <div className="rounded-b-lg border-x-2 border-b-2 border-primary bg-background/80 backdrop-blur-sm">
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>
@@ -131,7 +131,7 @@ interface TableRowProps {
 const TableRow = ({ item, i, isDesserts, hasHalfKg, hasKg, hasPc, isAddon }: TableRowProps) => (
   <tr
     className={`border-b border-border/50 transition-colors hover:bg-secondary/30 ${
-      isAddon ? "bg-primary/8" : i % 2 === 0 ? "bg-background" : "bg-background/60"
+      isAddon ? "bg-primary/8" : i % 2 === 0 ? "" : "bg-background/20"
     }`}
   >
     <td className="px-2 py-2 font-body text-xs text-muted-foreground md:px-4 md:text-sm">{item.no}</td>

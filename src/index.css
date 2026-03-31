@@ -99,9 +99,10 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply text-foreground font-body antialiased;
+    background-color: hsl(20 10% 12%);
     background-image: url('/images/dark-texture-bg.png');
-    background-size: cover;
+    background-size: 600px auto;
     background-repeat: repeat;
     background-attachment: fixed;
   }

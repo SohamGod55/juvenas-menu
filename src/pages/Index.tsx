@@ -19,7 +19,7 @@ const Index = () => {
     .filter((cat) => cat.items.length > 0);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <HeroSection />
       <InfoSections />
 
@@ -64,7 +64,7 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 rounded-xl border-2 border-primary bg-background p-6 shadow-sm"
+          className="mt-12 rounded-xl border-2 border-primary bg-background/80 backdrop-blur-sm p-6 shadow-sm"
         >
           <p className="mb-2 font-display text-base font-semibold text-foreground">
             Kindly specify if you need your order to be eggless.
@@ -101,7 +101,7 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t-2 border-primary bg-background py-6 px-4">
+      <footer className="border-t-2 border-primary py-6 px-4">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-base font-semibold text-primary">
             Juvenas Bakery

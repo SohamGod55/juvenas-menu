@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <div className="border-b-2 border-primary py-4 px-4">
         <div className="mx-auto max-w-3xl flex items-center gap-3">
           <Link to="/" className="text-primary hover:opacity-80 transition-opacity">
@@ -20,7 +20,7 @@ const AboutPage = () => {
         transition={{ duration: 0.4 }}
         className="mx-auto max-w-3xl px-4 py-8"
       >
-        <div className="rounded-xl border-2 border-primary bg-background p-6 shadow-sm space-y-4 font-body text-sm text-foreground leading-relaxed">
+        <div className="rounded-xl border-2 border-primary bg-background/80 backdrop-blur-sm p-6 shadow-sm space-y-4 font-body text-sm text-foreground leading-relaxed">
           <p>
             At Juvenas, we bring you an exclusive dial-up experience for specialty cakes, desserts, and handcrafted chocolates—each creation made only upon order, with the promise of absolute freshness.
           </p>

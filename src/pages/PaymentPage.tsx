@@ -5,7 +5,7 @@ import qrCode from "@/assets/payment-qr.png";
 
 const PaymentPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <div className="border-b-2 border-primary py-4 px-4">
         <div className="mx-auto max-w-3xl flex items-center gap-3">
           <Link to="/" className="text-primary hover:opacity-80 transition-opacity">
@@ -21,7 +21,7 @@ const PaymentPage = () => {
         transition={{ duration: 0.4 }}
         className="mx-auto max-w-3xl px-4 py-8"
       >
-        <div className="rounded-xl border-2 border-primary bg-background p-6 shadow-sm space-y-6">
+        <div className="rounded-xl border-2 border-primary bg-background/80 backdrop-blur-sm p-6 shadow-sm space-y-6">
           <div>
             <h2 className="font-display text-lg font-semibold text-primary mb-3">Payment Instructions</h2>
             <ul className="list-disc pl-5 space-y-2 font-body text-sm text-muted-foreground">

@@ -4,7 +4,7 @@ import logo from "@/assets/juvenas-logo.png";
 
 const HeroSection = () => {
   return (
-    <section className="bg-background pt-4 pb-6 px-4">
+    <section className="pt-4 pb-6 px-4">
       <div className="mx-auto max-w-3xl text-center">
         <motion.img
           src={logo}

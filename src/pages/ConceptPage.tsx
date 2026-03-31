@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ConceptPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <div className="border-b-2 border-primary py-4 px-4">
         <div className="mx-auto max-w-3xl flex items-center gap-3">
           <Link to="/" className="text-primary hover:opacity-80 transition-opacity">
@@ -20,7 +20,7 @@ const ConceptPage = () => {
         transition={{ duration: 0.4 }}
         className="mx-auto max-w-3xl px-4 py-8"
       >
-        <div className="rounded-xl border-2 border-primary bg-background p-6 shadow-sm">
+        <div className="rounded-xl border-2 border-primary bg-background/80 backdrop-blur-sm p-6 shadow-sm">
           <h2 className="font-display text-lg font-semibold text-primary mb-4">Our Concept</h2>
           <ul className="list-disc pl-5 space-y-3 font-body text-sm text-muted-foreground leading-relaxed">
             <li>All our creations are made fresh to order. Kindly place orders at least one day in advance and specify if you require an eggless option.</li>
