@@ -101,7 +101,7 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t-2 border-primary bg-background py-6 px-4">
+      <footer className="border-t-2 border-primary py-6 px-4">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-base font-semibold text-primary">
             Juvenas Bakery

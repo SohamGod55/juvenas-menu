@@ -21,7 +21,7 @@ const InfoSections = () => {
           <Link
             key={btn.label}
             to={btn.to}
-            className="flex items-center justify-center gap-2 rounded-lg border-2 border-primary bg-background px-3 py-3 font-display text-sm font-semibold text-primary shadow-sm transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-md md:text-base"
+            className="flex items-center justify-center gap-2 rounded-lg border-2 border-primary bg-transparent px-3 py-3 font-display text-sm font-semibold text-primary shadow-sm transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-md md:text-base"
           >
             <btn.icon className="h-4 w-4" />
             {btn.label}
