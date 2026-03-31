@@ -61,7 +61,7 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="rounded-b-lg border-x-2 border-b-2 border-primary bg-background">
+            <div className="rounded-b-lg border-x-2 border-b-2 border-primary bg-background/80 backdrop-blur-sm">
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>
