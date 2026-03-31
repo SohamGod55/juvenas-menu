@@ -21,7 +21,7 @@ const PaymentPage = () => {
         transition={{ duration: 0.4 }}
         className="mx-auto max-w-3xl px-4 py-8"
       >
-        <div className="rounded-xl border-2 border-primary bg-background p-6 shadow-sm space-y-6">
+        <div className="rounded-xl border-2 border-primary bg-background/80 backdrop-blur-sm p-6 shadow-sm space-y-6">
           <div>
             <h2 className="font-display text-lg font-semibold text-primary mb-3">Payment Instructions</h2>
             <ul className="list-disc pl-5 space-y-2 font-body text-sm text-muted-foreground">
