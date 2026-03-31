@@ -64,7 +64,7 @@ const Index = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 rounded-xl border-2 border-primary bg-background p-6 shadow-sm"
+          className="mt-12 rounded-xl border-2 border-primary bg-background/80 backdrop-blur-sm p-6 shadow-sm"
         >
           <p className="mb-2 font-display text-base font-semibold text-foreground">
             Kindly specify if you need your order to be eggless.
