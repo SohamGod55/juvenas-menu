@@ -22,7 +22,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="inline-flex items-center gap-1 text-primary hover:underline mb-3"
+          className="inline-flex items-center gap-1 text-primary hover:underline mb-3 cursor-pointer"
         >
           <Instagram className="h-4 w-4" />
           <span className="font-body text-xs">@juvenasdesserts</span>
