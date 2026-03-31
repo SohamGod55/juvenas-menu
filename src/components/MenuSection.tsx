@@ -42,7 +42,7 @@ const MenuSection = ({ category, index, defaultOpen = false }: MenuSectionProps)
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group flex w-full items-center justify-center gap-2 rounded-lg border-2 border-primary bg-background px-3 py-1.5 text-center transition-all hover:bg-primary hover:text-primary-foreground shadow-sm"
+        className="group flex w-full items-center justify-center gap-2 rounded-lg border-2 border-primary bg-transparent px-3 py-1.5 text-center transition-all hover:bg-primary hover:text-primary-foreground shadow-sm"
       >
         <h2 className="font-display text-sm font-semibold text-primary group-hover:text-primary-foreground md:text-base">
           {category.title}
