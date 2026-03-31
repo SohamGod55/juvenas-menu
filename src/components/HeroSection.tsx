@@ -10,7 +10,7 @@ const HeroSection = () => {
           src={logo}
           alt="Juvenas - Cakes & Desserts"
           className="mx-auto mb-2 h-28 w-auto md:h-36"
-          style={{ filter: "brightness(0) saturate(100%) invert(15%) sepia(8%) saturate(1200%) hue-rotate(340deg) brightness(95%) contrast(90%)" }}
+          style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
