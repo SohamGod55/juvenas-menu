@@ -19,7 +19,7 @@ const Index = () => {
     .filter((cat) => cat.items.length > 0);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <HeroSection />
       <InfoSections />
 
