@@ -15,22 +15,19 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
         />
-        <motion.div
+        <motion.a
+          href="https://www.instagram.com/juvenas_desserts/"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mb-3"
+          className="relative z-20 mb-3 inline-flex items-center gap-1.5 cursor-pointer text-primary hover:underline"
+          aria-label="Open Juvenas Desserts Instagram"
         >
-          <a
-            href="https://www.instagram.com/juvenas_desserts"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-primary hover:underline cursor-pointer"
-          >
-            <Instagram className="h-4 w-4" />
-            <span className="font-body text-xs">@juvenas_desserts</span>
-          </a>
-        </motion.div>
+          <Instagram className="h-4 w-4" />
+          <span className="font-body text-xs">@juvenas_desserts</span>
+        </motion.a>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
