@@ -22,13 +22,13 @@ const HeroSection = () => {
           className="mb-3"
         >
           <a
-            href="https://www.instagram.com/juvenasdesserts/"
+            href="https://www.instagram.com/juvenas_desserts"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-primary hover:underline cursor-pointer"
           >
             <Instagram className="h-4 w-4" />
-            <span className="font-body text-xs">@juvenasdesserts</span>
+            <span className="font-body text-xs">@juvenas_desserts</span>
           </a>
         </motion.div>
         <motion.p
