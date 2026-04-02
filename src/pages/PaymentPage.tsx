@@ -40,6 +40,7 @@ const PaymentPage = () => {
                 src={qrCode}
                 alt="Juvenas Desserts UPI QR Code"
                 className="w-64 h-auto"
+                style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
               />
               <div className="mt-4 text-center font-body text-sm text-foreground space-y-1">
                 <p><strong>Ac Name:</strong> Juvenas Desserts</p>
